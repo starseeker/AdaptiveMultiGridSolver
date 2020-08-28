@@ -26,20 +26,20 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include "PreProcessor.h"
+#include <afes/PreProcessor.h>
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <float.h>
-#include "MyMiscellany.h"
-#include "CmdLineParser.h"
-#include "PPolynomial.h"
-#include "FEMTree.h"
-#include "Ply.h"
-#include "VertexFactory.h"
-#include "Image.h"
-#include "RegularGrid.h"
+#include <afes/MyMiscellany.h>
+#include <afes/CmdLineParser.h>
+#include <afes/PPolynomial.h>
+#include <afes/FEMTree.h>
+#include <afes/Ply.h>
+#include <afes/VertexFactory.h>
+#include <afes/RegularGrid.h>
+#include <afes/Image.h>
 
 cmdLineParameter< char* >
 	In( "in" ) ,

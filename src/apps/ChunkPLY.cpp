@@ -26,7 +26,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include "PreProcessor.h"
+#include <afes/PreProcessor.h>
 
 #define NEW_CHUNKS
 #define DISABLE_PARALLELIZATION
@@ -37,12 +37,12 @@ DAMAGE.
 #include <limits>
 #include <sstream>
 #include <unordered_map>
-#include "MyMiscellany.h"
-#include "CmdLineParser.h"
-#include "Geometry.h"
-#include "Ply.h"
-#include "VertexStream.h"
-#include "VertexFactory.h"
+#include <afes/MyMiscellany.h>
+#include <afes/CmdLineParser.h>
+#include <afes/Geometry.h>
+#include <afes/Ply.h>
+#include <afes/VertexStream.h>
+#include <afes/VertexFactory.h>
 
 cmdLineParameters< char* > In( "in" );
 cmdLineParameter< char* > Out( "out" );

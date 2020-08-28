@@ -26,7 +26,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include "PreProcessor.h"
+#include <afes/PreProcessor.h>
 
 #undef USE_DOUBLE
 #define DEFAULT_DIMENSION 2
@@ -41,12 +41,12 @@ DAMAGE.
 #include <stdlib.h>
 #include <float.h>
 #include <algorithm>
-#include "Image.h"
-#include "MyMiscellany.h"
-#include "Array.h"
-#include "CmdLineParser.h"
-#include "Geometry.h"
-#include "FEMTree.h"
+#include <afes/Image.h>
+#include <afes/MyMiscellany.h>
+#include <afes/Array.h>
+#include <afes/CmdLineParser.h>
+#include <afes/Geometry.h>
+#include <afes/FEMTree.h>
 
 cmdLineParameterArray< char* , 2 >
 	In( "in" );

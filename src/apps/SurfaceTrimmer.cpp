@@ -26,7 +26,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include "PreProcessor.h"
+#include <afes/PreProcessor.h>
 
 #define DEFAULT_DIMENSION 3
 
@@ -34,13 +34,13 @@ DAMAGE.
 #include <stdlib.h>
 #include <float.h>
 #include <algorithm>
-#include "FEMTree.h"
-#include "MyMiscellany.h"
-#include "CmdLineParser.h"
-#include "MAT.h"
-#include "Geometry.h"
-#include "Ply.h"
-#include "VertexFactory.h"
+#include <afes/FEMTree.h>
+#include <afes/MyMiscellany.h>
+#include <afes/CmdLineParser.h>
+#include <afes/MAT.h>
+#include <afes/Geometry.h>
+#include <afes/Ply.h>
+#include <afes/VertexFactory.h>
 
 MessageWriter messageWriter;
 
