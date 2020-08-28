@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <vector>
-#ifdef _WIN32
-#include "PNG/png.h"
-#else // !_WIN32
 #include <png.h>
-#endif // _WIN32
+#include <zlib.h>
+
 
 inline PNGReader::PNGReader( const char* fileName , unsigned int& width , unsigned int& height , unsigned int& channels )
 {
@@ -144,6 +142,6 @@ unsigned int PNGWriter::nextRow( const unsigned char* row )
 }
 unsigned int PNGWriter::nextRows( const unsigned char* rows , unsigned int rowNum )
 {
-	for( unsigned int r=0 ; r<rowNum ; r++ ) png_write_row( _png_ptr , (png_bytep)( rows + r * 3 * sizeof( unsigned char ) * _png_ptr->width ) );
+	for( unsigned int r=0 ; r<rowNum ; r++ ) png_write_row( _png_ptr , (png_bytep)( rows + r * 3 * sizeof( unsigned char ) * png_get_image_width(_png_ptr,_info_ptr) ) );
 	return _currentRow += rowNum;
 }
