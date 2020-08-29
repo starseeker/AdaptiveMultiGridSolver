@@ -39,13 +39,13 @@ DAMAGE.
 #include <stdlib.h>
 #include <math.h>
 #include <float.h>
+#include <apps_utils/CmdLineParser.h>
+#include <apps_utils/io/Image.h>
 #include <afes/MyMiscellany.h>
-#include <afes/CmdLineParser.h>
 #include <afes/PPolynomial.h>
 #include <afes/FEMTree.h>
 #include <afes/Ply.h>
 #include <afes/VertexFactory.h>
-#include <afes/Image.h>
 #include <afes/RegularGrid.h>
 
 MessageWriter messageWriter;
