@@ -160,9 +160,9 @@ void WriteMesh( const char *fileName , int ft , VertexDataFactory vertexDataFact
 	if( strcasecmp( ext , "ply" ) ) ERROR_OUT( "Can only output mesh to .ply file" );
 	delete[] ext;
 
-	if( vertices.size()>std::numeric_limits< int >::max() )
+	if( vertices.size()>(std::numeric_limits< int >::max)() )
 	{
-		if( vertices.size()>std::numeric_limits< unsigned int >::max() ) ERROR_OUT( "more vertices than can be indexed by an unsigned int: %llu" , (unsigned long long)vertices.size() );
+		if( vertices.size()>(std::numeric_limits< unsigned int >::max)() ) ERROR_OUT( "more vertices than can be indexed by an unsigned int: %llu" , (unsigned long long)vertices.size() );
 		WARN( "more vertices than can be indexed by an int, using unsigned int instead: %llu" , (unsigned long long)vertices.size() );
 		std::vector< std::vector< unsigned int > > outPolygons;
 		outPolygons.resize( polygons.size() );
@@ -277,8 +277,8 @@ void Execute( VertexDataFactory vertexDataFactory )
 
 	if( BoundingBox.set )
 	{
-		Point< float , 3 > min( BoundingBox.values[0] , BoundingBox.values[1] , BoundingBox.values[2] );
-		Point< float , 3 > max( BoundingBox.values[3] , BoundingBox.values[4] , BoundingBox.values[5] );
+		Point< float , 3 > (min)( BoundingBox.values[0] , BoundingBox.values[1] , BoundingBox.values[2] );
+		Point< float , 3 > (max)( BoundingBox.values[3] , BoundingBox.values[4] , BoundingBox.values[5] );
 		auto InBoundingBox = [&]( Point< float , 3 > p )
 		{
 			return

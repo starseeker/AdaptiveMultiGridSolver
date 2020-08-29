@@ -261,7 +261,7 @@ template< unsigned int LeftRadius , unsigned int RightRadius , bool CreateNodes 
 void FEMTree< Dim , Real >::processNeighbors( FEMTreeNode **nodes , size_t nodeCount, std::tuple< DenseOrSparseNodeData *... > data , InitializeFunctor initialize )
 {
 	int maxDepth = 0;
-	for( size_t i=0 ; i<nodeCount ; i++ ) maxDepth = std::max( maxDepth , nodes[i]->depth() );
+	for( size_t i=0 ; i<nodeCount ; i++ ) maxDepth = (std::max)( maxDepth , nodes[i]->depth() );
 	std::vector< node_index_type > map( _nodeCount );
 	for( node_index_type i=0 ; i<_nodeCount ; i++ ) map[i] = i;
 	typedef typename RegularTreeNode< Dim , FEMTreeNodeData , depth_and_offset_type >::template NeighborKey< IsotropicUIntPack< Dim , LeftRadius > , IsotropicUIntPack< Dim , RightRadius > > NeighborKey;
@@ -313,7 +313,7 @@ void FEMTree< Dim , Real >::processNeighboringLeaves( FEMTreeNode **nodes , size
 	};
 
 	unsigned int maxDepth=0;
-	for( size_t i=0 ; i<nodeCount ; i++ ) maxDepth = std::max( maxDepth , (unsigned int)nodes[i]->depth() );
+	for( size_t i=0 ; i<nodeCount ; i++ ) maxDepth = (std::max)( maxDepth , (unsigned int)nodes[i]->depth() );
 
 	std::vector< NeighborKey > neighborKeys( ThreadPool::NumThreads() );
 	for( int i=0 ; i<neighborKeys.size() ; i++ ) neighborKeys[i].set( maxDepth );
@@ -662,7 +662,7 @@ void FEMTree< Dim , Real >::finalizeForMultigrid( LocalDepth baseDepth , LocalDe
 	for( int d=0 ; d<Dim ; d++ ) off[d] = 0;
 	FEMTreeNode::ResetDepthAndOffset( _tree , d , off );
 	_maxDepth = _spaceRoot->maxDepth();
-	_fullDepth = std::min( fullDepth , _maxDepth );
+	_fullDepth = (std::min)( fullDepth , _maxDepth );
 
 	// Mark leaf nodes that are Dirichlet constraints so they do not get clipped out.
 	// Need to do this before introducing new nodes into the tree  (since isDirichletLeaf depends on the structure at input).

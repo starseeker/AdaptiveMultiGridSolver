@@ -250,7 +250,7 @@ namespace PLY
 	template< typename VertexFactory , typename Index , class Real , int Dim , typename OutputIndex >
 	void WritePolygons( std::string fileName , const VertexFactory &vFactory , CoredMeshData< typename VertexFactory::VertexType , Index >* mesh , int file_type , const std::vector< std::string > &comments , std::function< typename VertexFactory::VertexType ( typename VertexFactory::VertexType ) > xForm )
 	{
-		if( mesh->outOfCoreVertexNum()+mesh->inCoreVertices.size()>(size_t)std::numeric_limits< OutputIndex >::max() )
+		if( mesh->outOfCoreVertexNum()+mesh->inCoreVertices.size()>(size_t)(std::numeric_limits< OutputIndex >::max)() )
 		{
 			if( std::is_same< Index , OutputIndex >::value ) ERROR_OUT( "more vertices than can be represented using " , Traits< Index >::name );
 			WARN( "more vertices than can be represented using " , Traits< OutputIndex >::name , " using " , Traits< Index >::name , " instead" );
