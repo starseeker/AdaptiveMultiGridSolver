@@ -82,14 +82,15 @@ if(PRECOMPILED_HEADERS)
 target_precompile_headers(AdaptiveTreeVisualization
                         PRIVATE 
                         <afes/MyMiscellany.h>
-                        <afes/CmdLineParser.h>
                         <afes/PPolynomial.h>
                         <afes/FEMTree.h>
-                        <afes/Ply.h>
-                        <afes/VertexFactory.h>
                         <afes/RegularGrid.h>
                         <afes/PreProcessor.h>
-                        <apps_utils/Image.h>)
+                        <apps_utils/CmdLineParser.h>
+                        <apps_utils/io/Image.h>
+                        <apps_utils/io/Ply.h>
+                        <apps_utils/io/VertexFactory.h>
+                        <apps_utils/io/VertexStreamImpl.h>)
 
 target_precompile_headers (ChunkPLY REUSE_FROM AdaptiveTreeVisualization)
 target_precompile_headers (EDTInHeat REUSE_FROM AdaptiveTreeVisualization)

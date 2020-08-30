@@ -47,6 +47,7 @@ DAMAGE.
 #include <atomic>
 #include "MyMiscellany.h"
 #include "BSplineData.h"
+#include "CoredMesh.h"
 #include "Geometry.h"
 #include "VertexStream.h"
 #include "RegularTree.h"
