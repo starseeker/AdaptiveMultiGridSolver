@@ -37,12 +37,13 @@ DAMAGE.
 #include <limits>
 #include <sstream>
 #include <unordered_map>
+#include <apps_utils/CmdLineParser.h>
+#include <apps_utils/io/Ply.h>
+#include <apps_utils/io/VertexStreamImpl.h>
+#include <apps_utils/io/VertexFactory.h>
 #include <afes/MyMiscellany.h>
-#include <afes/CmdLineParser.h>
 #include <afes/Geometry.h>
-#include <afes/Ply.h>
-#include <afes/VertexStream.h>
-#include <afes/VertexFactory.h>
+
 
 cmdLineParameters< char* > In( "in" );
 cmdLineParameter< char* > Out( "out" );

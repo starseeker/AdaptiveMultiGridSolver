@@ -1,0 +1,29 @@
+add_library(apps_utils INTERFACE)
+target_include_directories(apps_utils INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> "${CMAKE_CURRENT_BINARY_DIR}")
+target_sources(apps_utils INTERFACE
+                include/apps_utils/CmdLineParser.h
+                include/apps_utils/CmdLineParser.inl
+                include/apps_utils/io/Image.h
+                include/apps_utils/io/JPEG.h
+                include/apps_utils/io/JPEG.inl
+                include/apps_utils/io/PNG.h
+                include/apps_utils/io/PNG.inl
+                include/apps_utils/io/Ply.h
+                include/apps_utils/io/Ply.inl
+                include/apps_utils/io/PlyFile.h
+                include/apps_utils/io/PlyFile.inl
+                include/apps_utils/io/VertexFactory.h
+                include/apps_utils/io/VertexFactory.inl
+                include/apps_utils/io/VertexStreamImpl.h
+                include/apps_utils/io/VertexStreamImpl.inl)
+
+target_link_libraries(apps_utils INTERFACE
+                      afes::afes
+                      zlib::zlib
+                      libpng::libpng
+                      libjpeg::libjpeg)
+install(TARGETS apps_utils
+        DESTINATION ${CMAKE_INSTALL_BINDIRs})
+
+add_library(apps_utils::apps_utils ALIAS apps_utils)
+

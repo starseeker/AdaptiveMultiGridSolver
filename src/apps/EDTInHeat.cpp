@@ -37,12 +37,12 @@ DAMAGE.
 #include <math.h>
 #include <float.h>
 #include <functional>
+#include <apps_utils/CmdLineParser.h>
+#include <apps_utils/io/Ply.h>
+#include <apps_utils/io/VertexFactory.h>
 #include <afes/MyMiscellany.h>
-#include <afes/CmdLineParser.h>
 #include <afes/PPolynomial.h>
 #include <afes/FEMTree.h>
-#include <afes/Ply.h>
-#include <afes/VertexFactory.h>
 
 MessageWriter messageWriter;
 

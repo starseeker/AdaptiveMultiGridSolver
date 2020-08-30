@@ -41,10 +41,10 @@ DAMAGE.
 #include <stdlib.h>
 #include <float.h>
 #include <algorithm>
-#include <afes/Image.h>
+#include <apps_utils/CmdLineParser.h>
+#include <apps_utils/io/Image.h>
 #include <afes/MyMiscellany.h>
 #include <afes/Array.h>
-#include <afes/CmdLineParser.h>
 #include <afes/Geometry.h>
 #include <afes/FEMTree.h>
 

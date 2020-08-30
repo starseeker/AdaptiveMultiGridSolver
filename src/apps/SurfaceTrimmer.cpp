@@ -34,13 +34,13 @@ DAMAGE.
 #include <stdlib.h>
 #include <float.h>
 #include <algorithm>
+#include <apps_utils/CmdLineParser.h>
+#include <apps_utils/io/Ply.h>
+#include <apps_utils/io/VertexFactory.h>
 #include <afes/FEMTree.h>
 #include <afes/MyMiscellany.h>
-#include <afes/CmdLineParser.h>
 #include <afes/MAT.h>
 #include <afes/Geometry.h>
-#include <afes/Ply.h>
-#include <afes/VertexFactory.h>
 
 MessageWriter messageWriter;
 
