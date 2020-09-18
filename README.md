@@ -1,4 +1,4 @@
-<center><h2>Adaptive Multigrid Solvers (Version 13.50)</h2></center>
+<center><h2>Adaptive Multigrid Solvers (Version 13.61)</h2></center>
 <center>
 <a href="#LINKS">links</a>
 <a href="#EXECUTABLES">executables</a>
@@ -29,10 +29,12 @@ This code-base was born from the Poisson Surface Reconstruction code. It has evo
 <a href="http://www.cs.jhu.edu/~misha/MyPapers/SGP20.pdf">[Kazhdan, Chuang, Rusinkiewicz, and Hoppe, 2020]</a>
 <br>
 <b>Executables: </b>
-<a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.50/AdaptiveSolvers.x64.zip">Win64</a><br>
+<a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.61/AdaptiveSolvers.x64.zip">Win64</a><br>
 <b>Source Code:</b>
-<a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.50/AdaptiveSolvers.zip">ZIP</a> <a href="https://github.com/mkazhdan/PoissonRecon">GitHub</a><br>
+<a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.61/AdaptiveSolvers.zip">ZIP</a> <a href="https://github.com/mkazhdan/PoissonRecon">GitHub</a><br>
 <b>Older Versions:</b>
+<a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.60/">V13.60</a>,
+<a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.50/">V13.50</a>,
 <a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.00/">V13.00</a>,
 <a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version12.00/">V12.00</a>,
 <a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version11.02/">V11.02</a>,
@@ -355,13 +357,19 @@ individual components of the surface reconstructor.
 <DETAILS>
 <SUMMARY>
 <font size="+1"><b>PointInterpolant</b></font>:
-Fits a function to a set of sample values (and gradients) by finding the coefficients of the function that minimize an energy composed of an interpolation term and Laplacian and bi-Laplacian smoothness terms
+Fits a function to a set of sample values and/or gradients by finding the coefficients of the function that minimize an energy composed of a point-wise interpolation term and Laplacian and bi-Laplacian smoothness terms
 </SUMMARY>
 
-<dt><b>--in</b> &lt;<i>input sample positions and values</i>&gt;</dt>
+<dt><b>--inValues</b> &lt;<i>input sample positions and values</i>&gt;</dt>
 <dd> This string is the name of the file from which the positions and values will be read.<br>
-The file should be an ascii file with groups of <I>Dim</I>+1 or 2*<I>Dim</I>+1 (depending on whether gradients are provided or note)
-white space delimited, numbers: the coordinates of the point's position, followed by the value at that point (and gradient).<br>
+The file should be an ascii file with groups of <I>Dim</I>+1, white space delimited, numbers: the coordinates of the point's position,
+followed by the value at that point.<br>
+No information about the number of samples should be specified.</dd>
+
+<dt><b>--inGradients</b> &lt;<i>input sample positions and gradients</i>&gt;</dt>
+<dd> This string is the name of the file from which the positions and gradients will be read.<br>
+The file should be an ascii file with groups of 2*<I>Dim</I>, white space delimited, numbers: the coordinates of the point's position,
+followed by the gradient at that point).<br>
 No information about the number of samples should be specified.</dd>
 
 <dt>[<b>--dim</b> &lt;<i>dimension of the samples</i>&gt;]</dt>
@@ -431,9 +439,6 @@ The default value for this parameter is 1.</dd>
 <dt>[<b>--iters</b> &lt;<i>GS iters</i>&gt;]</dt>
 <dd> This integer value specifies the number of Gauss-Seidel relaxations to be performed at each level of the hiearchy.<br>
 The default value for this parameter is 8.</dd>
-
-<dt>[<b>--useGradients</b>]</dt>
-<dd> Enabling this flag indicates that the input file contains gradients as well as sample values.</dd>
 
 <dt>[<b>--performance</b>]</dt>
 <dd> Enabling this flag provides running time and peak memory usage at the end of the execution.</dd>
@@ -776,7 +781,7 @@ A set of 4 2D positions at which the fit function is to be evaluated (represente
 </ol>
 
 The function fitting the input samples can be by calling the point interpolant:
-<blockquote><code>% PointInterpolant --in quadratic.2D.fitting.samples --tree quadratic.2D.tree --dim 2</code></blockquote>
+<blockquote><code>% PointInterpolant --inValues quadratic.2D.fitting.samples --tree quadratic.2D.tree --dim 2</code></blockquote>
 Then, the reconstructed function can be evaluated at the evaluation samples by calling the adaptive tree visualization:
 <blockquote><code>% AdaptiveTreeVisualization --in quadratic.2D.tree --samples quadratic.2D.evaluation.samples</code></blockquote>
 This will output the evaluation positions and values:
@@ -1039,6 +1044,16 @@ Similarly, to reduce compilation times, support for specific degrees can be remo
 <a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.50/">Version 13.50</a>:
 <ol>
 <LI> Enabled support for automatically detecting attirbutes of input point cloud (in addition to positions and normals) when provided in .ply format.
+</ol>
+
+<a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.60/">Version 13.60</a>:
+<ol>
+<LI> Modified the implementation of <I>PointInterpolant</I> to support separately prescribing value and gradient constraints.
+</ol>
+
+<a href="http://www.cs.jhu.edu/~misha/Code/PoissonRecon/Version13.61/">Version 13.61</a>:
+<ol>
+<LI> Bug fix addressing the problem that the memory for a <CODE>DynamicFactory</CODE> object is dynamically allocated and not only known at construction time.
 </ol>
 
 </DETAILS>
