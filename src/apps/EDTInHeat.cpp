@@ -26,7 +26,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include <afes/PreProcessor.h>
+#include <amgs/PreProcessor.h>
 
 #undef USE_DOUBLE				// If enabled, double-precesion is used
 #define DEFAULT_DIMENSION 3		// The dimension of the system
@@ -40,9 +40,9 @@ DAMAGE.
 #include <apps_utils/CmdLineParser.h>
 #include <apps_utils/io/Ply.h>
 #include <apps_utils/io/VertexFactory.h>
-#include <afes/MyMiscellany.h>
-#include <afes/PPolynomial.h>
-#include <afes/FEMTree.h>
+#include <amgs/MyMiscellany.h>
+#include <amgs/PPolynomial.h>
+#include <amgs/FEMTree.h>
 
 MessageWriter messageWriter;
 

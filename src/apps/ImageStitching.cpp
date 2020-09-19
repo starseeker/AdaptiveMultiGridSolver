@@ -26,7 +26,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include <afes/PreProcessor.h>
+#include <amgs/PreProcessor.h>
 
 #undef USE_DOUBLE
 #define DEFAULT_DIMENSION 2
@@ -43,10 +43,10 @@ DAMAGE.
 #include <algorithm>
 #include <apps_utils/CmdLineParser.h>
 #include <apps_utils/io/Image.h>
-#include <afes/MyMiscellany.h>
-#include <afes/Array.h>
-#include <afes/Geometry.h>
-#include <afes/FEMTree.h>
+#include <amgs/MyMiscellany.h>
+#include <amgs/Array.h>
+#include <amgs/Geometry.h>
+#include <amgs/FEMTree.h>
 
 cmdLineParameterArray< char* , 2 >
 	In( "in" );

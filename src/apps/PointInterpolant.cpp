@@ -26,7 +26,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include <afes/PreProcessor.h>
+#include <amgs/PreProcessor.h>
 
 //#undef USE_DOUBLE								// If enabled, double-precesion is used
 #define USE_DOUBLE								// If enabled, double-precesion is used
@@ -44,10 +44,10 @@ DAMAGE.
 #include <apps_utils/io/Ply.h>
 #include <apps_utils/io/VertexFactory.h>
 #include <apps_utils/io/VertexStreamImpl.h>
-#include <afes/MyMiscellany.h>
-#include <afes/PPolynomial.h>
-#include <afes/FEMTree.h>
-#include <afes/RegularGrid.h>
+#include <amgs/MyMiscellany.h>
+#include <amgs/PPolynomial.h>
+#include <amgs/FEMTree.h>
+#include <amgs/RegularGrid.h>
 
 MessageWriter messageWriter;
 

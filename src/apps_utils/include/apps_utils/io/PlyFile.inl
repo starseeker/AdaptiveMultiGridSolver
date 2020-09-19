@@ -36,7 +36,7 @@ WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
 #include <math.h>
 #include <string.h>
 #include "PlyFile.h"
-#include <afes/MyMiscellany.h>
+#include <amgs/MyMiscellany.h>
 
 const char *type_names[] =
 {

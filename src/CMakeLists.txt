@@ -1,4 +1,4 @@
-add_subdirectory(afes)
+add_subdirectory(amgs)
 
 if(BUILD_APPS)
 add_subdirectory(apps)

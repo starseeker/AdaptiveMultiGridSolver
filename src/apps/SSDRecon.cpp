@@ -26,7 +26,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include <afes/PreProcessor.h>
+#include <amgs/PreProcessor.h>
 
 #undef USE_DOUBLE								// If enabled, double-precesion is used
 #define DATA_DEGREE 0							// The order of the B-Spline used to splat in data for color interpolation
@@ -46,11 +46,11 @@ DAMAGE.
 #include <apps_utils/io/Ply.h>
 #include <apps_utils/io/VertexFactory.h>
 #include <apps_utils/io/VertexStreamImpl.h>
-#include <afes/MyMiscellany.h>
-#include <afes/PPolynomial.h>
-#include <afes/FEMTree.h>
+#include <amgs/MyMiscellany.h>
+#include <amgs/PPolynomial.h>
+#include <amgs/FEMTree.h>
 
-#include <afes/RegularGrid.h>
+#include <amgs/RegularGrid.h>
 
 MessageWriter messageWriter;
 

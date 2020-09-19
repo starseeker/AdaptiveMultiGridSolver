@@ -18,7 +18,7 @@ target_sources(apps_utils INTERFACE
                 include/apps_utils/io/VertexStreamImpl.inl)
 
 target_link_libraries(apps_utils INTERFACE
-                      afes::afes
+                      amgs::amgs
                       zlib::zlib
                       libpng::libpng
                       libjpeg::libjpeg)

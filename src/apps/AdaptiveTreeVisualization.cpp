@@ -26,21 +26,21 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 */
 
-#include <afes/PreProcessor.h>
+#include <amgs/PreProcessor.h>
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <float.h>
-#include <afes/MyMiscellany.h>
+#include <amgs/MyMiscellany.h>
 #include <apps_utils/CmdLineParser.h>
 #include <apps_utils/io/Image.h>
 #include <apps_utils/io/Ply.h>
 #include <apps_utils/io/VertexStreamImpl.h>
 #include <apps_utils/io/VertexFactory.h>
-#include <afes/PPolynomial.h>
-#include <afes/FEMTree.h>
-#include <afes/RegularGrid.h>
+#include <amgs/PPolynomial.h>
+#include <amgs/FEMTree.h>
+#include <amgs/RegularGrid.h>
 
 cmdLineParameter< char* >
 	In( "in" ) ,

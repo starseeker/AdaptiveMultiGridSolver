@@ -36,7 +36,7 @@ jobs:
        compiler: clang
        env:
         - CONAN_PROFILE=.conan/profiles/macOS
-        - BUILD_THREADS=8
+        - BUILD_THREADS=1
 
        install:
         # Get updated build tools
