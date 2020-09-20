@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/gipeto/PoissonRecon.svg?branch=master)](https://travis-ci.com/gipeto/PoissonRecon)
 <center><h2>Adaptive Multigrid Solvers (Version 13.61)</h2></center>
 <center>
 <a href="#LINKS">links</a>
@@ -8,6 +9,32 @@
 <a href="#SUPPORT">support</a>
 -->
 </center>
+<br/><br/>
+
+This repository contains a fork of the [PoissonRecon](https://github.com/mkazhdan/PoissonRecon) repository, which has been refactored to allow using the solver as a library.
+
+The codebase has been re-orgainzed to allow integration with [CMake](https://cmake.org/).
+Dependencies are now fetched using [conan](https://conan.io/) and the library itself can be packaged using it.
+Most of the code has been moved around unchanged in order to simplify the porting of bugfixes from the original codebase.
+
+The library and the apps consuming it can be build as follows:
+
+```
+conan install . -if build --build missing -o amgs:build_apps=True -o amgs:with_io=True
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install -DBUILD_APPS=ON -G <cmake-generator> ..
+cmake --build .
+```
+
+The conan package can be created running: 
+
+```
+conan create . user/channel   
+```
+
+
+----- ORIGINAL README ------
+
 <hr>
 This code-base was born from the Poisson Surface Reconstruction code. It has evolved to support more general adaptive finite-elements systems:
 <UL>
