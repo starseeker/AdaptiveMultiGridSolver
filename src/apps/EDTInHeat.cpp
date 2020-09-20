@@ -38,8 +38,8 @@ DAMAGE.
 #include <float.h>
 #include <functional>
 #include <apps_utils/CmdLineParser.h>
-#include <apps_utils/io/Ply.h>
-#include <apps_utils/io/VertexFactory.h>
+#include <amgs_io/Ply.h>
+#include <amgs_io/VertexFactory.h>
 #include <amgs/MyMiscellany.h>
 #include <amgs/PPolynomial.h>
 #include <amgs/FEMTree.h>

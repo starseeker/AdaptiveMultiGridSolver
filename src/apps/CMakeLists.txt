@@ -3,6 +3,7 @@ add_executable(AdaptiveTreeVisualization AdaptiveTreeVisualization.cpp)
 target_link_libraries(AdaptiveTreeVisualization 
                        PRIVATE
                         amgs::amgs
+                        amgs_io::amgs_io
                         apps_utils::apps_utils)
         
 install(TARGETS AdaptiveTreeVisualization
@@ -13,6 +14,7 @@ add_executable(ChunkPLY ChunkPLY.cpp)
 target_link_libraries(ChunkPLY
                        PRIVATE
                         amgs::amgs
+                        amgs_io::amgs_io
                         apps_utils::apps_utils)
         
 install(TARGETS ChunkPLY
@@ -23,6 +25,7 @@ add_executable(EDTInHeat EDTInHeat.cpp)
 target_link_libraries(EDTInHeat
                       PRIVATE
                        amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
         
 install(TARGETS EDTInHeat
@@ -33,6 +36,7 @@ add_executable(ImageStitching ImageStitching.cpp)
 target_link_libraries(ImageStitching
                       PRIVATE
                        amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
         
 install(TARGETS ImageStitching
@@ -43,6 +47,7 @@ add_executable(PointInterpolant PointInterpolant.cpp)
 target_link_libraries(PointInterpolant
                       PRIVATE
                        amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
         
 install(TARGETS PointInterpolant
@@ -53,6 +58,7 @@ add_executable(PoissonRecon PoissonRecon.cpp)
 target_link_libraries(PoissonRecon
                       PRIVATE
                        amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
 
 install(TARGETS PoissonRecon
@@ -63,6 +69,7 @@ add_executable(SSDRecon SSDRecon.cpp)
 target_link_libraries(SSDRecon
                       PRIVATE
                        amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
 
 install(TARGETS SSDRecon
@@ -73,6 +80,7 @@ add_executable(SurfaceTrimmer SurfaceTrimmer.cpp)
 target_link_libraries(SurfaceTrimmer
                       PRIVATE
                        amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
 
 install(TARGETS SurfaceTrimmer

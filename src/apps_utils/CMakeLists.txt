@@ -8,14 +8,7 @@ target_sources(apps_utils INTERFACE
                 include/apps_utils/io/JPEG.inl
                 include/apps_utils/io/PNG.h
                 include/apps_utils/io/PNG.inl
-                include/apps_utils/io/Ply.h
-                include/apps_utils/io/Ply.inl
-                include/apps_utils/io/PlyFile.h
-                include/apps_utils/io/PlyFile.inl
-                include/apps_utils/io/VertexFactory.h
-                include/apps_utils/io/VertexFactory.inl
-                include/apps_utils/io/VertexStreamImpl.h
-                include/apps_utils/io/VertexStreamImpl.inl)
+)
 
 target_link_libraries(apps_utils INTERFACE
                       amgs::amgs

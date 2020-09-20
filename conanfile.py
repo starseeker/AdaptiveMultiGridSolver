@@ -17,8 +17,8 @@ class AdaptiveMultiGridSolver(ConanFile):
 
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake_find_package"
-    options = {"shared": [True, False], "build_apps": [True, False]}
-    default_options = {"shared": False, "build_apps": False}
+    options = {"shared": [True, False], "build_apps": [True, False], "with_io": [True, False]}
+    default_options = {"shared": False, "build_apps": False, "with_io": False}
     short_paths = True
 
     scm = {
@@ -41,6 +41,7 @@ class AdaptiveMultiGridSolver(ConanFile):
     def _configure(self):
         cmake = CMake(self)
         cmake.definitions['BUILD_APPS'] = "ON" if self.options.build_apps else "OFF"
+        cmake.definitions['WITH_IO'] = "ON" if self.options.with_io else "OFF"
         if self.settings.os == 'Macos':
             cmake.definitions['CMAKE_MACOSX_RPATH'] = "TRUE"
         cmake.configure()

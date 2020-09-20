@@ -35,9 +35,9 @@ DAMAGE.
 #include <amgs/MyMiscellany.h>
 #include <apps_utils/CmdLineParser.h>
 #include <apps_utils/io/Image.h>
-#include <apps_utils/io/Ply.h>
-#include <apps_utils/io/VertexStreamImpl.h>
-#include <apps_utils/io/VertexFactory.h>
+#include <amgs_io/Ply.h>
+#include <amgs_io/VertexStreamImpl.h>
+#include <amgs_io/VertexFactory.h>
 #include <amgs/PPolynomial.h>
 #include <amgs/FEMTree.h>
 #include <amgs/RegularGrid.h>
