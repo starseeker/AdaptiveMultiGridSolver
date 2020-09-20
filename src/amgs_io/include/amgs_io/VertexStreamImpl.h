@@ -31,8 +31,8 @@ DAMAGE.
 
 #include <functional>
 #include "Ply.h"
-#include <afes/Geometry.h>
-#include <afes/VertexStream.h>
+#include <amgs/Geometry.h>
+#include <amgs/VertexStream.h>
 
 
 template< typename Data >

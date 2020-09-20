@@ -4,7 +4,7 @@
 #define SUPPORT_TILES
 
 #include <string.h>
-#include <afes/MyMiscellany.h>
+#include <amgs/MyMiscellany.h>
 
 struct ImageReader
 {

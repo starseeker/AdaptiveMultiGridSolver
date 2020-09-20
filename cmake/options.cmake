@@ -1,5 +1,6 @@
 
 option(BUILD_APPS "Build applications" OFF)
+option(WITH_IO "Build i/o support library" OFF)
 option(BIG_DATA "Supports processing requiring more than 32-bit integers for indexing" OFF)
 option(FAST_COMPILE "If enabled, only a single version of the code is compiled" OFF)
 option(SHOW_WARNINGS "Display compilation warnings" OFF)
@@ -8,8 +9,16 @@ option(USE_SEG_FAULT_HANDLER "Tries to dump a stack trace in the case of a segfa
 
 message(STATUS "Active options:")
 
+if(WITH_IO)
+  message(STATUS "BUILD_APPS")
+endif()
+
 if(BUILD_APPS)
   message(STATUS "BUILD_APPS")
+  if(NOT WITH_IO)
+    message(STATUS "Forcing WITH_IO as required by BUILD_APPS")
+    set(WITH_IO ON)
+  endif()
 endif()
 
 if(BIG_DATA)

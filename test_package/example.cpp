@@ -1,5 +1,5 @@
-#include <afes/MyMiscellany.h>
-#include <afes/Allocator.h>
+#include <amgs/MyMiscellany.h>
+#include <amgs/Allocator.h>
 
 int main()
 {

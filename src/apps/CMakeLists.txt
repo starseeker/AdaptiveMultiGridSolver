@@ -2,7 +2,8 @@
 add_executable(AdaptiveTreeVisualization AdaptiveTreeVisualization.cpp)
 target_link_libraries(AdaptiveTreeVisualization 
                        PRIVATE
-                        afes::afes
+                        amgs::amgs
+                        amgs_io::amgs_io
                         apps_utils::apps_utils)
         
 install(TARGETS AdaptiveTreeVisualization
@@ -12,7 +13,8 @@ install(TARGETS AdaptiveTreeVisualization
 add_executable(ChunkPLY ChunkPLY.cpp)
 target_link_libraries(ChunkPLY
                        PRIVATE
-                        afes::afes
+                        amgs::amgs
+                        amgs_io::amgs_io
                         apps_utils::apps_utils)
         
 install(TARGETS ChunkPLY
@@ -22,7 +24,8 @@ install(TARGETS ChunkPLY
 add_executable(EDTInHeat EDTInHeat.cpp)
 target_link_libraries(EDTInHeat
                       PRIVATE
-                       afes::afes
+                       amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
         
 install(TARGETS EDTInHeat
@@ -32,7 +35,8 @@ install(TARGETS EDTInHeat
 add_executable(ImageStitching ImageStitching.cpp)
 target_link_libraries(ImageStitching
                       PRIVATE
-                       afes::afes
+                       amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
         
 install(TARGETS ImageStitching
@@ -42,7 +46,8 @@ install(TARGETS ImageStitching
 add_executable(PointInterpolant PointInterpolant.cpp)
 target_link_libraries(PointInterpolant
                       PRIVATE
-                       afes::afes
+                       amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
         
 install(TARGETS PointInterpolant
@@ -52,7 +57,8 @@ install(TARGETS PointInterpolant
 add_executable(PoissonRecon PoissonRecon.cpp)
 target_link_libraries(PoissonRecon
                       PRIVATE
-                       afes::afes
+                       amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
 
 install(TARGETS PoissonRecon
@@ -62,7 +68,8 @@ install(TARGETS PoissonRecon
 add_executable(SSDRecon SSDRecon.cpp)
 target_link_libraries(SSDRecon
                       PRIVATE
-                       afes::afes
+                       amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
 
 install(TARGETS SSDRecon
@@ -72,7 +79,8 @@ install(TARGETS SSDRecon
 add_executable(SurfaceTrimmer SurfaceTrimmer.cpp)
 target_link_libraries(SurfaceTrimmer
                       PRIVATE
-                       afes::afes
+                       amgs::amgs
+                       amgs_io::amgs_io
                        apps_utils::apps_utils)
 
 install(TARGETS SurfaceTrimmer

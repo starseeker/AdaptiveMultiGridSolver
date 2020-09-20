@@ -1,14 +1,14 @@
 
 from conans import ConanFile, CMake, tools
 
-class AdaptiveFiniteElementSolver(ConanFile):
-    name = "afes"
+class AdaptiveMultiGridSolver(ConanFile):
+    name = "amgs"
     lib_version = '13.61.0'
     pkg_version = '0'
     version = '{}-{}'.format(lib_version, pkg_version)
     license = "MIT (https://github.com/mkazhdan/PoissonRecon/blob/master/LICENSE)"
     url = "https://github.com/mkazhdan/PoissonRecon/"
-    description = """This recipe expose the Adaptive Finite Element Solver of the PoissonRecon
+    description = """This recipe expose the Adaptive Multigrid Solver of the PoissonRecon
                       repository as a library.
                       The source is a fork of the linked repository, reorganized for allowing
                       cmake integration and refactored to remove external dependencies on the
@@ -17,8 +17,8 @@ class AdaptiveFiniteElementSolver(ConanFile):
 
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake_find_package"
-    options = {"shared": [True, False], "build_apps": [True, False], "precompiled_headers": [True, False]}
-    default_options = {"shared": False, "build_apps": False, "precompiled_headers": False}
+    options = {"shared": [True, False], "build_apps": [True, False], "with_io": [True, False]}
+    default_options = {"shared": False, "build_apps": False, "with_io": False}
     short_paths = True
 
     scm = {
@@ -41,7 +41,7 @@ class AdaptiveFiniteElementSolver(ConanFile):
     def _configure(self):
         cmake = CMake(self)
         cmake.definitions['BUILD_APPS'] = "ON" if self.options.build_apps else "OFF"
-        cmake.definitions['PRECOMPILED_HEADERS'] = "ON" if self.options.precompiled_headers else "OFF"
+        cmake.definitions['WITH_IO'] = "ON" if self.options.with_io else "OFF"
         if self.settings.os == 'Macos':
             cmake.definitions['CMAKE_MACOSX_RPATH'] = "TRUE"
         cmake.configure()

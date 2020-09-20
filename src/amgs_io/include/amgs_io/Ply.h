@@ -37,9 +37,9 @@ WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
 #include <string>
 #include <functional>
 #include "PlyFile.h"
-#include <afes/Geometry.h>
-#include <afes/CoredMesh.h>
-#include <afes/MyMiscellany.h>
+#include <amgs/Geometry.h>
+#include <amgs/CoredMesh.h>
+#include <amgs/MyMiscellany.h>
 
 namespace PLY
 {
