@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/gipeto/PoissonRecon.svg?branch=master)](https://travis-ci.com/gipeto/PoissonRecon)
+[![Build Status](https://travis-ci.com/gipeto/AdaptiveMultiGridSolver.svg?branch=master)](https://travis-ci.com/gipeto/AdaptiveMultiGridSolver)
 <center><h2>Adaptive Multigrid Solvers (Version 13.61)</h2></center>
 <center>
 <a href="#LINKS">links</a>
