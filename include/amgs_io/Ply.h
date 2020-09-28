@@ -85,5 +85,41 @@ namespace PLY
 	template< typename VertexFactory , typename Index >
 	void ReadPolygons( std::string fileName , const VertexFactory &vFactory , std::vector< typename VertexFactory::VertexType > &vertices , std::vector< std::vector< Index > >& polygons , int &file_type , std::vector< std::string > &comments , bool* readFlags=NULL );
 }
+
+#include <amgs/VertexStream.h>
+
+template< typename Factory >
+class PLYInputDataStream : public InputDataStream< typename Factory::VertexType >
+{
+	typedef typename Factory::VertexType Data;
+	const Factory &_factory;
+	char* _fileName;
+	PlyFile *_ply;
+	std::vector< std::string > _elist;
+	char *_buffer;
+
+	size_t _pCount , _pIdx;
+	void _free( void );
+public:
+	PLYInputDataStream( const char* fileName , const Factory &factory );
+	~PLYInputDataStream( void );
+	void reset( void );
+	bool next( Data &d );
+};
+
+template< typename Factory >
+class PLYOutputDataStream : public OutputDataStream< typename Factory::VertexType >
+{
+	typedef typename Factory::VertexType Data;
+	const Factory &_factory;
+	PlyFile *_ply;
+	size_t _pCount , _pIdx;
+	char *_buffer;
+public:
+	PLYOutputDataStream( const char* fileName , const Factory &factory , size_t count , int fileType=PLY_BINARY_NATIVE );
+	~PLYOutputDataStream( void );
+	void next( const Data &d );
+};
+
 #include "Ply.inl"
 #endif // PLY_INCLUDED

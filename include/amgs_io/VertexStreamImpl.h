@@ -30,7 +30,6 @@ DAMAGE.
 #define VERTEX_STREAM_IMPL_INCLUDED
 
 #include <functional>
-#include "Ply.h"
 #include <amgs/Geometry.h>
 #include <amgs/VertexStream.h>
 
@@ -140,39 +139,6 @@ public:
 	BinaryOutputDataStream( const char* filename , const Factory &factory );
 	~BinaryOutputDataStream( void ){ fclose( _fp ) , _fp=NULL; }
 	void reset( void ){ fseek( _fp , SEEK_SET , 0 ); }
-	void next( const Data &d );
-};
-
-template< typename Factory >
-class PLYInputDataStream : public InputDataStream< typename Factory::VertexType >
-{
-	typedef typename Factory::VertexType Data;
-	const Factory &_factory;
-	char* _fileName;
-	PlyFile *_ply;
-	std::vector< std::string > _elist;
-	char *_buffer;
-
-	size_t _pCount , _pIdx;
-	void _free( void );
-public:
-	PLYInputDataStream( const char* fileName , const Factory &factory );
-	~PLYInputDataStream( void );
-	void reset( void );
-	bool next( Data &d );
-};
-
-template< typename Factory >
-class PLYOutputDataStream : public OutputDataStream< typename Factory::VertexType >
-{
-	typedef typename Factory::VertexType Data;
-	const Factory &_factory;
-	PlyFile *_ply;
-	size_t _pCount , _pIdx;
-	char *_buffer;
-public:
-	PLYOutputDataStream( const char* fileName , const Factory &factory , size_t count , int fileType=PLY_BINARY_NATIVE );
-	~PLYOutputDataStream( void );
 	void next( const Data &d );
 };
 
