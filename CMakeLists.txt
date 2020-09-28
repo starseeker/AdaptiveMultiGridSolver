@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.12)
 
 project(AMGS VERSION 13.61.0 LANGUAGES CXX)
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake")
+include(RPath_Setup)
+cmake_set_rpath()
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -62,3 +66,4 @@ endif (NOT DEFINED BIN_DIR)
 
 add_subdirectory(src)
 
+message(WARNING "\nCAUTION:  it is not recommended that users compile this code in parallel unless your machine has a VERY large amount of RAM.  (16GiB was not enough in a September 2020 test.)")
