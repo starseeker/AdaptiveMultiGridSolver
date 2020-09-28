@@ -39,8 +39,8 @@ DAMAGE.
 #include <unordered_map>
 #include <apps_utils/CmdLineParser.h>
 #include <amgs_io/Ply.h>
-#include <amgs_io/VertexStreamImpl.h>
 #include <amgs_io/VertexFactory.h>
+#include <amgs/VertexStreamImpl.h>
 #include <amgs/MyMiscellany.h>
 #include <amgs/Geometry.h>
 
