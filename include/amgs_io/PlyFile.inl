@@ -51,7 +51,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#include "MyMiscellany.h"
+#include "amgs/MyMiscellany.h"
 
 const char *type_names[] =
 {
