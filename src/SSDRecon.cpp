@@ -45,7 +45,7 @@ DAMAGE.
 #include <apps_utils/io/Image.h>
 #include <amgs_io/Ply.h>
 #include <amgs_io/VertexFactory.h>
-#include <amgs/VertexStreamImpl.h>
+#include <amgs_io/VertexStreamImpl.h>
 #include <amgs/MyMiscellany.h>
 #include <amgs/PPolynomial.h>
 #include <amgs/FEMTree.h>
